@@ -24,28 +24,7 @@ class Fire extends JFrame
     
     
     model = new FireModel(view);
-     JPanel controller=new JPanel();
-        controller.setLayout(new GridLayout(6,1));
-        add(controller);
-        {
-            JPanel controller1=new JPanel();
-            controller.add(controller1);
-            {   
-                stepButton=new JButton("Step");
-                stepButton.addActionListener(new ActionListener(){});
-                controller1.add(stepButton);
-                
-                autoButton=new JButton("Auto");
-                autoButton.addActionListener(new ActionListener(){});
-                controller1.add(autoButton);
-                
-                JButton resetButton=new JButton("Reset");
-                resetButton.addActionListener(new ActionListener(){
-                controller1.add(resetButton);
-            }
-    public void actionPerformed(ActionEvent e) {
    
-    
      
   }
   

@@ -19,7 +19,40 @@ public class FireModel
         myView.updateView(myGrid);
     }
 
-    
+     public void spread(int x, int y){
+        
+                
+        if(get(x,y-1) == Cell.GREEN){
+            int rnd = (int)(Math.random()*100);
+            if(rnd<probability){
+                cell[x][y-1].set(Cell.RED);
+        
+            }
+        }
+        if(get(x,y+1) == Cell.GREEN){
+            int rnd = (int)(Math.random()*100);
+            if(rnd<probability){
+                cell[x][y+1].set(Cell.RED);
+               
+            }      
+        }
+        if(get(x-1,y) == Cell.GREEN){
+            int rnd = (int)(Math.random()*100);
+            if(rnd<probability){
+                cell[x-1][y].set(Cell.RED);
+                
+            }      
+        }
+        if(get(x+1,y) == Cell.GREEN){
+            int rnd = (int)(Math.random()*100);
+            if(rnd<probability){
+                cell[x+1][y].set(Cell.RED);
+                
+            }      
+        }
+        
+        cell[x][y].set(Cell.YELLOW);
+    }
    
     
 }

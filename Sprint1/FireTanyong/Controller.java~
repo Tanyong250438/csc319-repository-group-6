@@ -103,9 +103,6 @@ public class Controller extends JFrame{
                             startThread=new Thread() {  
                                 public void run() { 
                                     myModel.checkBurn();
-                                    
-                                    myModel.update();
-                                
                                 }  
                             };
                             startThread.start();

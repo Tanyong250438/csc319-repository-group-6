@@ -19,7 +19,7 @@ public class Controller extends JFrame{
     JButton startButton,stopButton,moveButton;
     JLabel probability,ratio,empty,size,delay;
     JSlider probabilityScale,ratioScale,emptyScale,sizeScale,delayScale;
-    JTextField setProp =new JTextField(15);
+    JTextField setProp = new JTextField(15);
     JTextField setSize =new JTextField(15);
     JTextField setHight =new JTextField(15);
 
@@ -64,7 +64,15 @@ public class Controller extends JFrame{
                 JLabel prop = new JLabel("PropCatch : ");
                 controller2.add(prop);
                 controller2.add(setProp);
-           
+                setProp.addActionListener(new ActionListener(){
+                    @Override
+                    public void actionPerformed(ActionEvent e){
+                        //If there is no Thread or Thread is dead, create new Thread and start
+                        String text = setProp.getText();
+                        myModel.setProbability(Integer.parseInt(text));
+                        System.out.println(Integer.parseInt(text));
+                    }
+                });
             }
             
             
@@ -102,7 +110,7 @@ public class Controller extends JFrame{
                         if(startThread==null||!startThread.isAlive()){
                             startThread=new Thread() {  
                                 public void run() { 
-                                    myModel.checkBurn();
+                                    myModel.applySpread();
                                     
                                     myModel.update();
                                 
