@@ -79,7 +79,7 @@ public class Controller extends JFrame{
           @Override
           public void actionPerformed(ActionEvent e){
             
-            String text2 = setWidth.getText();
+            String text2 = setWidth.getText();//I dont sure about it
             myModel.setWidth(Integer.parseInt(text2));
             System.out.println(Integer.parseInt(text2));
           }
