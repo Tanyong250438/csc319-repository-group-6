@@ -133,7 +133,7 @@ public class Controller extends JFrame{
         controller1.add(startButton);
         
         
-        stopButton=new JButton("Step");
+        stopButton=new JButton("Step");//It can not use this button
         stopButton.addActionListener(new ActionListener(){
           
           public void actionPerformed(ActionEvent e){
