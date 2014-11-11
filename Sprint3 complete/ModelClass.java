@@ -95,7 +95,7 @@ public final class ModelClass {
   }
  
   
-   public void fieldProbTreeReset(){
+   public void fieldProbTreeReset(){//with set probTree
    
     
     cell=new Cell[width][height];
