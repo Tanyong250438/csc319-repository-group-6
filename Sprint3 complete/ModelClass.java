@@ -67,7 +67,7 @@ public final class ModelClass {
     update();
   }
   
-  public void fieldProbBurnReset(){
+  public void fieldProbBurnReset(){//with set probBurn
    
     
     cell=new Cell[width][height];
