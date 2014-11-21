@@ -14,7 +14,7 @@ public class Controller extends JFrame{
         setLayout(new GridLayout(1, 2));
         
         add(forest);
-        
+        //
         JPanel controller=new JPanel();
         controller.setLayout(new GridLayout(6,1));
         add(controller);
