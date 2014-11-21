@@ -60,17 +60,26 @@ public class Controller extends JFrame{
     
     myModel.addObserver(myView);
     
-   
+    /*
+    create new JPanel for major controller to load buttons and textFields
+    */
     JPanel controller=new JPanel();
+    
+    /*
+    Set major controller with GridLayout to format controller button and textField
+    */
     controller.setLayout(new GridLayout(4,1));
     
-    
+    //add controller to the JFrame
     add(controller);
     
     
     {
-      
+      /*
+        create new controller2 to pack each button and textField below and add to the major controller that will be more neatness
+      */
       JPanel controller2=new JPanel();
+      //add controller2 to sort by GridLayout in the major controller
       controller.add(controller2);
       {
         JLabel prop = new JLabel("Set PropCatch : ");
@@ -96,7 +105,7 @@ public class Controller extends JFrame{
         });
       }
       
-      
+      //do the same thing with the controller2
       JPanel controller3=new JPanel();
       controller.add(controller3);
       
@@ -130,14 +139,14 @@ public class Controller extends JFrame{
         });
         
       }
-      
-      JPanel controller5=new JPanel();
-      controller.add(controller5);
+      //do the same thing with the controller2
+      JPanel controller4=new JPanel();
+      controller.add(controller4);
       
       {
         JLabel probBurn = new JLabel("Set ProbBurn : ");
-        controller5.add(probBurn);
-        controller5.add(setProbBurn);
+        controller4.add(probBurn);
+        controller4.add(setProbBurn);
         setProbBurn.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent e){
@@ -158,14 +167,14 @@ public class Controller extends JFrame{
           }
         });
       }
-      
-      JPanel controller6=new JPanel();
-      controller.add(controller6);
+      //do the same thing with the controller2
+      JPanel controller5=new JPanel();
+      controller.add(controller5);
       
       {
         JLabel probTree = new JLabel("Set ProbTree : ");
-        controller6.add(probTree);
-        controller6.add(setProbTree);
+        controller5.add(probTree);
+        controller5.add(setProbTree);
         setProbTree.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent e){
@@ -186,14 +195,14 @@ public class Controller extends JFrame{
           }
         });
       }
-      
-      JPanel controller7=new JPanel();
-      controller.add(controller7);
+      //do the same thing with the controller2
+      JPanel controller6=new JPanel();
+      controller.add(controller6);
       
       {
         JLabel probLight = new JLabel("Set ProbLight : ");
-        controller7.add(probLight);
-        controller7.add(setProbLight);
+        controller6.add(probLight);
+        controller6.add(setProbLight);
         setProbLight.addActionListener(new ActionListener(){
           @Override
           public void actionPerformed(ActionEvent e){
@@ -215,9 +224,9 @@ public class Controller extends JFrame{
         });
       }
       
-      
-      JPanel controller1=new JPanel();
-      controller.add(controller1);
+      //do the same thing with the controller2
+      JPanel controller7=new JPanel();
+      controller.add(controller7);
       
       {
         
@@ -239,7 +248,7 @@ public class Controller extends JFrame{
             }
           }
         });
-        controller1.add(startButton);
+        controller7.add(startButton);
         
         
         stepButton=new JButton("Step");//It can not use this button
@@ -261,11 +270,35 @@ public class Controller extends JFrame{
           }
         });
         
-        controller1.add(stepButton);
-
+        controller7.add(stepButton);
         
+        JButton resetButton=new JButton("Reset");
+        resetButton.addActionListener(new ActionListener(){
+          
+          public void actionPerformed(ActionEvent e){
+            
+            if(startThread!=null&&startThread.isAlive()){
+              startThread.stop();
+            }
+            
+            myModel.fieldReset();
+            myView.updateStep(0);
+            myModel.step = 0;
+            southWind = false;
+            eastWind = false;
+            northWind = false;
+            westWind = false;
+          }
+        });
+        controller7.add(resetButton);
+
+        /*
+            create new cotroller8 for pack wind buttons together
+        */
         JPanel controller8=new JPanel();
+        //and set it with GridLayout for neat of button 
         controller8.setLayout(new GridLayout(4,1));
+        // add controller8 to the major controller
         controller.add(controller8);
         
         
@@ -356,25 +389,7 @@ public class Controller extends JFrame{
         controller8.add(westwind);
         
         
-        JButton resetButton=new JButton("Reset");
-        resetButton.addActionListener(new ActionListener(){
-          
-          public void actionPerformed(ActionEvent e){
-            
-            if(startThread!=null&&startThread.isAlive()){
-              startThread.stop();
-            }
-            
-            myModel.fieldReset();
-            myView.updateStep(0);
-            myModel.step = 0;
-            southWind = false;
-            eastWind = false;
-            northWind = false;
-            westWind = false;
-          }
-        });
-        controller1.add(resetButton);
+        
         
         
         JButton helpButton=new JButton("HELP");
