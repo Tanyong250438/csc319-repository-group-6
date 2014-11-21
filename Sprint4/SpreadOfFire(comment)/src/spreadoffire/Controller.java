@@ -302,7 +302,7 @@ public class Controller extends JFrame{
         controller.add(controller8);
         
         
-        
+        //create 4 button fot control the wind and load into the controller8
         northwind=new JButton("Noth Wind");//It can not use this button
         northwind.addActionListener(new ActionListener(){
           
