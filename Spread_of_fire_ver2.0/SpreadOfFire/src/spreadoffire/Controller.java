@@ -225,8 +225,8 @@ public class Controller extends JFrame{
       }
       
       //do the same thing with the controller2
-      JPanel controller7=new JPanel();
-      controller.add(controller7);
+      JPanel controller1=new JPanel();
+      controller.add(controller1);
       
       {
         
@@ -248,7 +248,7 @@ public class Controller extends JFrame{
             }
           }
         });
-        controller7.add(startButton);
+        controller1.add(startButton);
         
         
         stepButton=new JButton("Step");//It can not use this button
@@ -270,7 +270,7 @@ public class Controller extends JFrame{
           }
         });
         
-        controller7.add(stepButton);
+        controller1.add(stepButton);
         
         JButton resetButton=new JButton("Reset");
         resetButton.addActionListener(new ActionListener(){
@@ -290,7 +290,7 @@ public class Controller extends JFrame{
             westWind = false;
           }
         });
-        controller7.add(resetButton);
+        controller1.add(resetButton);
 
         /*
             create new cotroller8 for pack wind buttons together
