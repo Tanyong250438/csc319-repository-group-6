@@ -1,4 +1,4 @@
-package spreadoffire;
+
 
 import javax.swing.JFrame;
 /**

@@ -1,4 +1,4 @@
-package spreadoffire;
+
 
 import java.awt.Color;
 
@@ -25,7 +25,7 @@ public final class ModelClass {
    Constructor-initialize width height prob
   */
   public ModelClass() {
-    this(30,30,50);
+    this(100,100,50);
   }
   /*
    Constructor-Field

@@ -1,4 +1,4 @@
-package spreadoffire;
+
 
 import java.awt.*;
 import java.awt.event.*;
@@ -91,11 +91,13 @@ public class Controller extends JFrame{
             
             try{
               String text = setProp.getText();
-              myModel.setProbability(Integer.parseInt(text));
-              System.out.println(Integer.parseInt(text));
+              
               if(Integer.parseInt(text)<0 || Integer.parseInt(text)>100){
                 JOptionPane.showMessageDialog(null,"please input only 0-100","Warning",
                                               JOptionPane.WARNING_MESSAGE);
+              }else{
+                myModel.setProbability(Integer.parseInt(text));
+                System.out.println(Integer.parseInt(text));
               }
             }catch(Exception a){
               JOptionPane.showMessageDialog(null,"please input only integer","Warning",
@@ -119,16 +121,18 @@ public class Controller extends JFrame{
             
             try{
               String text2 = setWidth.getText();
-              myModel.setSize(Integer.parseInt(text2),Integer.parseInt(text2));
-              System.out.println(Integer.parseInt(text2));
-              
-              int boxSize=(int)((400)/Integer.parseInt(text2));
-              myView.setSize(boxSize, boxSize);
-              
-              myModel.fieldReset();
               if(Integer.parseInt(text2)<0 || Integer.parseInt(text2)>200){
                 JOptionPane.showMessageDialog(null,"please input only 0-200","Warning",
                                               JOptionPane.WARNING_MESSAGE);
+              }else{
+                
+                myModel.setSize(Integer.parseInt(text2),Integer.parseInt(text2));
+                System.out.println(Integer.parseInt(text2));
+              
+                int boxSize=(int)((400)/Integer.parseInt(text2));
+                myView.setSize(boxSize, boxSize);
+              
+                myModel.fieldReset();
               }
             }catch(Exception a){
               JOptionPane.showMessageDialog(null,"please input only integer","Warning",
@@ -152,13 +156,15 @@ public class Controller extends JFrame{
           public void actionPerformed(ActionEvent e){
             try{
               String text3 = setProbBurn.getText();
-              myModel.setProbBurn(Integer.parseInt(text3));
-              System.out.println(Integer.parseInt(text3));
-              
-              myModel.fieldProbBurnReset();
+             
               if(Integer.parseInt(text3)<0 || Integer.parseInt(text3)>100){
                 JOptionPane.showMessageDialog(null,"please input only 0-100","Warning",
                                               JOptionPane.WARNING_MESSAGE);
+              }else{
+                 myModel.setProbBurn(Integer.parseInt(text3));
+                 System.out.println(Integer.parseInt(text3));
+              
+                 myModel.fieldProbBurnReset();
               }
             }catch(Exception a){
               JOptionPane.showMessageDialog(null,"please input only integer","Warning",
@@ -180,13 +186,15 @@ public class Controller extends JFrame{
           public void actionPerformed(ActionEvent e){
             try{
               String text4 = setProbTree.getText();
-              myModel.setProbTree(Integer.parseInt(text4));
-              System.out.println(Integer.parseInt(text4));
               
-              myModel.fieldProbBurnReset();
               if(Integer.parseInt(text4)<0 || Integer.parseInt(text4)>100){
                 JOptionPane.showMessageDialog(null,"please input only 0-100","Warning",
                                               JOptionPane.WARNING_MESSAGE);
+              }else{
+                myModel.setProbTree(Integer.parseInt(text4));
+                System.out.println(Integer.parseInt(text4));
+              
+                myModel.fieldProbBurnReset();
               }
             }catch(Exception a){
               JOptionPane.showMessageDialog(null,"please input only integer","Warning",
@@ -208,13 +216,13 @@ public class Controller extends JFrame{
           public void actionPerformed(ActionEvent e){
             try{
               String text5 = setProbLight.getText();
-              myModel.setProbLightning(Integer.parseInt(text5));
-              System.out.println(Integer.parseInt(text5));
               
-             
               if(Integer.parseInt(text5)<0 || Integer.parseInt(text5)>100){
                 JOptionPane.showMessageDialog(null,"please input only 0-100","Warning",
                                               JOptionPane.WARNING_MESSAGE);
+              }else{
+                myModel.setProbLightning(Integer.parseInt(text5));
+                System.out.println(Integer.parseInt(text5));
               }
             }catch(Exception a){
               JOptionPane.showMessageDialog(null,"please input only integer","Warning",

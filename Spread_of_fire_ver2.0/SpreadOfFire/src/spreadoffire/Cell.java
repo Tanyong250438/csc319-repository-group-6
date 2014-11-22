@@ -1,4 +1,4 @@
-package spreadoffire;
+
 
 import java.awt.Color;
 /**
